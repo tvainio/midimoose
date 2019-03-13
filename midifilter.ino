@@ -1,15 +1,17 @@
 #include <MIDI.h>
 #include <SoftwareSerial.h>
 
+// Maps midi channels 15 to 1 and 16 to 2. Filter out other channels. Filters
+// out everything except note on, note off and mod wheel.
+
 //SoftwareSerial debugSerial(10, 11); // RX, TX
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-
 void handleCC(byte channel, byte number, byte value) {
-  if (channel < 3 && number == 0x01) // Only send mod wheel
+  if (channel > 14 && number == 0x01) // Only send mod wheel
   {
-    MIDI.sendControlChange(number, value, channel);
+    MIDI.sendControlChange(number, value, channel-14);
   }
 }
 
