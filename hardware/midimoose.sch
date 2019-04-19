@@ -695,8 +695,6 @@ F 3 "" H 3400 5700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3400 5700 3950 5700
-Wire Wire Line
 	3950 2700 3950 2650
 Wire Wire Line
 	4050 2700 4050 2650
@@ -752,8 +750,6 @@ $EndComp
 Wire Wire Line
 	2600 4500 2750 4500
 Connection ~ 2600 4500
-Wire Wire Line
-	1200 4500 1450 4500
 $Comp
 L Connector:Conn_Coaxial_Power J1
 U 1 1 5CBA8AC4
@@ -781,8 +777,6 @@ Wire Wire Line
 Connection ~ 1200 4500
 Wire Wire Line
 	1200 4250 1200 4500
-Wire Wire Line
-	1000 4250 1200 4250
 Wire Wire Line
 	6100 4050 6100 3950
 Wire Wire Line
@@ -927,4 +921,10 @@ NoConn ~ 10000 4700
 NoConn ~ 9400 4700
 NoConn ~ 9400 5700
 NoConn ~ 10000 5700
+Wire Wire Line
+	3400 5700 3950 5700
+Wire Wire Line
+	1200 4500 1450 4500
+Wire Wire Line
+	1000 4250 1200 4250
 $EndSCHEMATC
