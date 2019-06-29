@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "midi moose"
-Date "2019-03-24"
+Date "2019-04-19"
 Rev "1"
 Comp "Teemu Vainio"
 Comment1 "https://github.com/tvainio/midimoose/"
@@ -283,7 +283,7 @@ L Connector:DIN-5_180degree J2
 U 1 1 5C997BE7
 P 1050 2300
 F 0 "J2" H 1050 2026 50  0000 C CNN
-F 1 "DIN-5_180degree" H 1050 1935 50  0000 C CNN
+F 1 "MIDI IN" H 1050 1935 50  0000 C CNN
 F 2 "" H 1050 2300 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 1050 2300 50  0001 C CNN
 	1    1050 2300
@@ -294,7 +294,7 @@ L Connector:DIN-5_180degree J4
 U 1 1 5C998D39
 P 9700 1550
 F 0 "J4" H 9700 1276 50  0000 C CNN
-F 1 "DIN-5_180degree" H 9700 1185 50  0000 C CNN
+F 1 "MIDI THRU" H 9700 1185 50  0000 C CNN
 F 2 "" H 9700 1550 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9700 1550 50  0001 C CNN
 	1    9700 1550
@@ -305,7 +305,7 @@ L Connector:DIN-5_180degree J6
 U 1 1 5C99968B
 P 9700 3650
 F 0 "J6" H 9700 3376 50  0000 C CNN
-F 1 "DIN-5_180degree" H 9700 3285 50  0000 C CNN
+F 1 "MIDI THRU" H 9700 3285 50  0000 C CNN
 F 2 "" H 9700 3650 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9700 3650 50  0001 C CNN
 	1    9700 3650
@@ -316,7 +316,7 @@ L Connector:DIN-5_180degree J7
 U 1 1 5C999C1B
 P 9700 4700
 F 0 "J7" H 9700 4426 50  0000 C CNN
-F 1 "DIN-5_180degree" H 9700 4335 50  0000 C CNN
+F 1 "MIDI THRU" H 9700 4335 50  0000 C CNN
 F 2 "" H 9700 4700 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9700 4700 50  0001 C CNN
 	1    9700 4700
@@ -513,7 +513,7 @@ L Connector:DIN-5_180degree J5
 U 1 1 5CB74E9C
 P 9700 2600
 F 0 "J5" H 9700 2326 50  0000 C CNN
-F 1 "DIN-5_180degree" H 9700 2235 50  0000 C CNN
+F 1 "MIDI THRU" H 9700 2235 50  0000 C CNN
 F 2 "" H 9700 2600 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9700 2600 50  0001 C CNN
 	1    9700 2600
@@ -621,7 +621,7 @@ L Connector:DIN-5_180degree J8
 U 1 1 5CB71F83
 P 9700 5700
 F 0 "J8" H 9700 5426 50  0000 C CNN
-F 1 "DIN-5_180degree" H 9700 5335 50  0000 C CNN
+F 1 "MIDI OUT TM3030" H 9700 5335 50  0000 C CNN
 F 2 "" H 9700 5700 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 9700 5700 50  0001 C CNN
 	1    9700 5700
