@@ -8,9 +8,14 @@ ClockOutput::ClockOutput(uint8_t divider, uint8_t pin)
     pinMode(pin, OUTPUT);
 }
 
-void ClockOutput::set(uint8_t divider, bool state)
+void ClockOutput::setState(uint8_t divider, bool state)
 {
     if (divider == this->divider) {
 	digitalWrite(this->pin, state);
     }
+}
+
+void ClockOutput::setDivider(uint8_t divider)
+{
+    this->divider = divider;
 }

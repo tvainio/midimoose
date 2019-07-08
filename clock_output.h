@@ -3,7 +3,7 @@
 #define CLOCK_OUTPUT_H
 #include <stdint.h>
 
-enum Divider { THIRTYTWO, SIXTEEN, EIGHT, FOUR, TWO, FULL };
+enum Divider {FULL, TWO, FOUR, EIGHT, SIXTEEN, THIRTYTWO};
 
 class ClockOutput
 {
@@ -14,7 +14,8 @@ private:
   
 public:
   ClockOutput(uint8_t divider, uint8_t pin);
-  void set(uint8_t divider, bool state);
+  void setState(uint8_t divider, bool state);
+  void setDivider(uint8_t divider);
 };
 
 #endif
