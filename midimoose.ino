@@ -12,12 +12,13 @@
 #define CLOCK_OUT_CC 3
 #define PPQ 96
 
-#define OUT1 8
-#define OUT2 9
-#define OUT3 10
-#define OUT4 11
+// weird hardware, weird pin numbering...
+#define OUT1 9
+#define OUT2 10
+#define OUT3 8
+#define OUT4 13
 #define OUT5 12
-#define OUT6 13
+#define OUT6 11
 
 ClockOutput output[] = {
 	ClockOutput(FULL, OUT1),
