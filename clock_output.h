@@ -14,7 +14,7 @@ private:
   
 public:
   ClockOutput(uint8_t divider, uint8_t pin);
-  void set(bool state);
+  void set(uint8_t divider, bool state);
 };
 
 #endif

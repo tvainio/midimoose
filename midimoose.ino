@@ -7,6 +7,8 @@
 #include "clock_divider.h" 
 #include "clock_output.h"
 
+#define NUMBER_OF_OUTPUTS 7
+
 #define CLOCK_OUT_CC 3
 #define PPQ 96
 
@@ -17,33 +19,40 @@
 #define OUT5 12
 #define OUT6 13
 
-ClockOutput output[6] = {
+ClockOutput output[] = {
+	ClockOutput(SIXTEEN, LED_BUILTIN),
 	ClockOutput(SIXTEEN, OUT1),
 	ClockOutput(SIXTEEN, OUT2),
 	ClockOutput(SIXTEEN, OUT3),
 	ClockOutput(SIXTEEN, OUT4),
 	ClockOutput(SIXTEEN, OUT5),
 	ClockOutput(SIXTEEN, OUT6),
+
 };
 
 
 //SoftwareSerial debugSerial(10, 11); // RX, TX
 
 
-void cb(bool state) {
-	digitalWrite(LED_BUILTIN, state);
+void nop(bool state) {
+}
+
+void updateOutputs(uint8_t divider, bool state) {
+	for (uint8_t i=0;i<NUMBER_OF_OUTPUTS; i++) {
+		output[i].set(SIXTEEN, state);
+	}
 }
 
 void cbSixteen(bool state) {
-	digitalWrite(LED_BUILTIN, state);
+	updateOutputs(SIXTEEN, state);
 }
 
-ClockDivider thirtytwo(PPQ/8, cb);
+ClockDivider thirtytwo(PPQ/8, nop);
 ClockDivider sixteen(PPQ/4, cbSixteen);
-ClockDivider eight(PPQ/2, cb);
-ClockDivider fourth(PPQ, cb);
-ClockDivider half(PPQ*2, cb);
-ClockDivider full(PPQ*4, cb);
+ClockDivider eight(PPQ/2, nop);
+ClockDivider fourth(PPQ, nop);
+ClockDivider half(PPQ*2, nop);
+ClockDivider full(PPQ*4, nop);
 
 byte counter = 0;
 int clockOutDivision = 0;
@@ -73,7 +82,7 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
   {
     MIDI.sendNoteOn(pitch, velocity, channel - 14);
     //         debugSerial.print(channel, HEX);
-    digitalWrite(LED_BUILTIN, HIGH);
+//    digitalWrite(LED_BUILTIN, HIGH);
   }
 }
 
@@ -83,23 +92,17 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 
   if (channel > 14) {
     MIDI.sendNoteOff(pitch, velocity, channel - 14);
-    digitalWrite(LED_BUILTIN, LOW);
+//    digitalWrite(LED_BUILTIN, LOW);
   }
 }
 void handleClock(void) {
 	sixteen.tick();
+
 }
 
 void setup()
 {
-	pinMode(OUT1, OUTPUT);
-	pinMode(OUT2, OUTPUT);
-	pinMode(OUT3, OUTPUT);
-	pinMode(OUT4, OUTPUT);
-	pinMode(OUT5, OUTPUT);
-	pinMode(OUT6, OUTPUT);
 	
-  pinMode(LED_BUILTIN, OUTPUT);
   //    debugSerial.begin(115200);
   //    debugSerial.println("Hello, world?");
 
