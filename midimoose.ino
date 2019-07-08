@@ -7,7 +7,7 @@
 #include "clock_divider.h" 
 #include "clock_output.h"
 
-#define NUMBER_OF_OUTPUTS 7
+#define NUMBER_OF_OUTPUTS 6
 
 #define CLOCK_OUT_CC 3
 #define PPQ 96
@@ -20,13 +20,12 @@
 #define OUT6 13
 
 ClockOutput output[] = {
-	ClockOutput(SIXTEEN, LED_BUILTIN),
-	ClockOutput(SIXTEEN, OUT1),
-	ClockOutput(SIXTEEN, OUT2),
-	ClockOutput(SIXTEEN, OUT3),
-	ClockOutput(SIXTEEN, OUT4),
+	ClockOutput(FULL, OUT1),
+	ClockOutput(TWO, OUT2),
+	ClockOutput(FOUR, OUT3),
+	ClockOutput(EIGHT, OUT4),
 	ClockOutput(SIXTEEN, OUT5),
-	ClockOutput(SIXTEEN, OUT6),
+	ClockOutput(THIRTYTWO, OUT6),
 
 };
 
@@ -39,23 +38,39 @@ void nop(bool state) {
 
 void updateOutputs(uint8_t divider, bool state) {
 	for (uint8_t i=0;i<NUMBER_OF_OUTPUTS; i++) {
-		output[i].set(SIXTEEN, state);
+		output[i].set(divider, state);
 	}
 }
 
+void cbThirtytwo(bool state) {
+	updateOutputs(THIRTYTWO, state);
+}
 void cbSixteen(bool state) {
 	updateOutputs(SIXTEEN, state);
 }
 
-ClockDivider thirtytwo(PPQ/8, nop);
-ClockDivider sixteen(PPQ/4, cbSixteen);
-ClockDivider eight(PPQ/2, nop);
-ClockDivider fourth(PPQ, nop);
-ClockDivider half(PPQ*2, nop);
-ClockDivider full(PPQ*4, nop);
+void cbEight(bool state) {
+	updateOutputs(EIGHT, state);
+}
 
-byte counter = 0;
-int clockOutDivision = 0;
+void cbFour(bool state) {
+	updateOutputs(FOUR, state);
+}
+
+void cbTwo(bool state) {
+	updateOutputs(TWO, state);
+}
+
+void cbFull(bool state) {
+	updateOutputs(FULL, state);
+}
+
+ClockDivider thirtytwo(PPQ/8, cbThirtytwo);
+ClockDivider sixteen(PPQ/4, cbSixteen);
+ClockDivider eight(PPQ/2, cbEight);
+ClockDivider fourth(PPQ, cbFour);
+ClockDivider two(PPQ*2, cbTwo);
+ClockDivider full(PPQ*4, cbFull);
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
@@ -82,7 +97,6 @@ void handleNoteOn(byte channel, byte pitch, byte velocity)
   {
     MIDI.sendNoteOn(pitch, velocity, channel - 14);
     //         debugSerial.print(channel, HEX);
-//    digitalWrite(LED_BUILTIN, HIGH);
   }
 }
 
@@ -92,11 +106,16 @@ void handleNoteOff(byte channel, byte pitch, byte velocity)
 
   if (channel > 14) {
     MIDI.sendNoteOff(pitch, velocity, channel - 14);
-//    digitalWrite(LED_BUILTIN, LOW);
   }
 }
 void handleClock(void) {
-	sixteen.tick();
+ thirtytwo.tick();
+ sixteen.tick();
+ eight.tick();
+ fourth.tick();
+ two.tick();
+ full.tick();
+
 
 }
 
