@@ -12,9 +12,9 @@
 #define PPQ 96
 
 // weird hardware, weird pin mapping...
-#define OUT1_PIN 9
-#define OUT2_PIN 10
-#define OUT3_PIN 8
+#define OUT1_PIN 10
+#define OUT2_PIN 8
+#define OUT3_PIN 9
 #define OUT4_PIN 13
 #define OUT5_PIN 12
 #define OUT6_PIN 11
