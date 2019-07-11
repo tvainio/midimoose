@@ -1,6 +1,3 @@
-// Maps midi channels 15 to 1 and 16 to 2. Filter out other channels. Filters
-// out everything except note on, note off and mod wheel.
-
 #include <EEPROM.h>
 #include <MIDI.h>
 #include "clock_divider.h" 
