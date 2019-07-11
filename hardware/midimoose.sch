@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "midi moose"
-Date "2019-04-19"
-Rev "1"
+Date "2019-07-11"
+Rev "2"
 Comp "Teemu Vainio"
 Comment1 "https://github.com/tvainio/midimoose/"
 Comment2 ""
@@ -259,12 +259,12 @@ $EndComp
 $Comp
 L Device:R R4
 U 1 1 5C9971AD
-P 4800 4350
-F 0 "R4" H 4870 4396 50  0000 L CNN
-F 1 "10k" H 4870 4305 50  0000 L CNN
-F 2 "" V 4730 4350 50  0001 C CNN
-F 3 "~" H 4800 4350 50  0001 C CNN
-	1    4800 4350
+P 4700 4350
+F 0 "R4" H 4770 4396 50  0000 L CNN
+F 1 "10k" H 4770 4305 50  0000 L CNN
+F 2 "" V 4630 4350 50  0001 C CNN
+F 3 "~" H 4700 4350 50  0001 C CNN
+	1    4700 4350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -794,8 +794,6 @@ Wire Wire Line
 	5700 3400 5500 3400
 Wire Wire Line
 	5500 3400 5500 3600
-Wire Wire Line
-	5500 3600 4550 3600
 Connection ~ 5700 3400
 Wire Wire Line
 	6200 2250 6950 2250
@@ -808,12 +806,6 @@ Wire Wire Line
 Connection ~ 4800 1650
 Wire Wire Line
 	4800 1650 7600 1650
-Wire Wire Line
-	4550 4800 6100 4800
-Wire Wire Line
-	6100 4800 6100 5800
-Wire Wire Line
-	6100 5800 9050 5800
 NoConn ~ 4550 5400
 NoConn ~ 4550 5300
 NoConn ~ 4550 5200
@@ -821,54 +813,29 @@ NoConn ~ 4550 5100
 Wire Wire Line
 	4550 4700 6950 4700
 $Comp
-L Connector:Conn_01x03_Male J3
-U 1 1 5CC3353C
-P 5150 3200
-F 0 "J3" H 5123 3130 50  0000 R CNN
-F 1 "Debug serial (optional)" H 5123 3221 50  0000 R CNN
-F 2 "" H 5150 3200 50  0001 C CNN
-F 3 "~" H 5150 3200 50  0001 C CNN
-	1    5150 3200
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	4550 3200 4950 3200
-Wire Wire Line
-	4550 3300 4950 3300
-$Comp
 L power:GND #PWR011
 U 1 1 5CC45D03
-P 4750 2750
-F 0 "#PWR011" H 4750 2500 50  0001 C CNN
-F 1 "GND" H 4755 2577 50  0000 C CNN
-F 2 "" H 4750 2750 50  0001 C CNN
-F 3 "" H 4750 2750 50  0001 C CNN
-	1    4750 2750
+P 2550 7100
+F 0 "#PWR011" H 2550 6850 50  0001 C CNN
+F 1 "GND" H 2555 6927 50  0000 C CNN
+F 2 "" H 2550 7100 50  0001 C CNN
+F 3 "" H 2550 7100 50  0001 C CNN
+	1    2550 7100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4750 2750 4950 2750
-Wire Wire Line
-	4950 2750 4950 3100
-Wire Wire Line
-	4550 4500 4800 4500
+	4550 4500 4700 4500
 $Comp
 L power:VCC #PWR012
 U 1 1 5CC4E0A2
-P 4800 4100
-F 0 "#PWR012" H 4800 3950 50  0001 C CNN
-F 1 "VCC" H 4817 4273 50  0000 C CNN
-F 2 "" H 4800 4100 50  0001 C CNN
-F 3 "" H 4800 4100 50  0001 C CNN
-	1    4800 4100
+P 4700 4050
+F 0 "#PWR012" H 4700 3900 50  0001 C CNN
+F 1 "VCC" H 4717 4223 50  0000 C CNN
+F 2 "" H 4700 4050 50  0001 C CNN
+F 3 "" H 4700 4050 50  0001 C CNN
+	1    4700 4050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4800 4100 4800 4200
-NoConn ~ 4550 3000
-NoConn ~ 4550 3100
-NoConn ~ 4550 3400
-NoConn ~ 4550 3500
 NoConn ~ 4550 3900
 NoConn ~ 4550 4000
 NoConn ~ 4550 4100
@@ -927,4 +894,352 @@ Wire Wire Line
 	1200 4500 1450 4500
 Wire Wire Line
 	1000 4250 1200 4250
+$Comp
+L 4xxx:4050 U5
+U 1 1 5D271027
+P 5500 5150
+F 0 "U5" H 5500 5467 50  0000 C CNN
+F 1 "4050" H 5500 5376 50  0000 C CNN
+F 2 "" H 5500 5150 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 5150 50  0001 C CNN
+	1    5500 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 2 1 5D27114D
+P 5500 5650
+F 0 "U5" H 5500 5967 50  0000 C CNN
+F 1 "4050" H 5500 5876 50  0000 C CNN
+F 2 "" H 5500 5650 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 5650 50  0001 C CNN
+	2    5500 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 3 1 5D271DAB
+P 5500 6150
+F 0 "U5" H 5500 6467 50  0000 C CNN
+F 1 "4050" H 5500 6376 50  0000 C CNN
+F 2 "" H 5500 6150 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 6150 50  0001 C CNN
+	3    5500 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 4 1 5D271E91
+P 5500 6600
+F 0 "U5" H 5500 6917 50  0000 C CNN
+F 1 "4050" H 5500 6826 50  0000 C CNN
+F 2 "" H 5500 6600 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 6600 50  0001 C CNN
+	4    5500 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 5 1 5D271F78
+P 5500 7050
+F 0 "U5" H 5500 7367 50  0000 C CNN
+F 1 "4050" H 5500 7276 50  0000 C CNN
+F 2 "" H 5500 7050 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 7050 50  0001 C CNN
+	5    5500 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 6 1 5D272072
+P 5500 7500
+F 0 "U5" H 5500 7817 50  0000 C CNN
+F 1 "4050" H 5500 7726 50  0000 C CNN
+F 2 "" H 5500 7500 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 5500 7500 50  0001 C CNN
+	6    5500 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 4xxx:4050 U5
+U 7 1 5D272150
+P 2550 6550
+F 0 "U5" H 2780 6596 50  0000 L CNN
+F 1 "4050" H 2780 6505 50  0000 L CNN
+F 2 "" H 2550 6550 50  0001 C CNN
+F 3 "http://www.intersil.com/content/dam/intersil/documents/cd40/cd4050bms.pdf" H 2550 6550 50  0001 C CNN
+	7    2550 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4800 7400 4800
+Wire Wire Line
+	7400 4800 7400 5800
+Wire Wire Line
+	7400 5800 9050 5800
+$Comp
+L Device:R R15
+U 1 1 5D351592
+P 5950 5150
+F 0 "R15" V 5743 5150 50  0000 C CNN
+F 1 "R" V 5834 5150 50  0000 C CNN
+F 2 "" V 5880 5150 50  0001 C CNN
+F 3 "~" H 5950 5150 50  0001 C CNN
+	1    5950 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R16
+U 1 1 5D351664
+P 5950 5650
+F 0 "R16" V 5743 5650 50  0000 C CNN
+F 1 "R" V 5834 5650 50  0000 C CNN
+F 2 "" V 5880 5650 50  0001 C CNN
+F 3 "~" H 5950 5650 50  0001 C CNN
+	1    5950 5650
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R17
+U 1 1 5D3516E2
+P 5950 6150
+F 0 "R17" V 5743 6150 50  0000 C CNN
+F 1 "R" V 5834 6150 50  0000 C CNN
+F 2 "" V 5880 6150 50  0001 C CNN
+F 3 "~" H 5950 6150 50  0001 C CNN
+	1    5950 6150
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R18
+U 1 1 5D351762
+P 5950 6600
+F 0 "R18" V 5743 6600 50  0000 C CNN
+F 1 "R" V 5834 6600 50  0000 C CNN
+F 2 "" V 5880 6600 50  0001 C CNN
+F 3 "~" H 5950 6600 50  0001 C CNN
+	1    5950 6600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R19
+U 1 1 5D3517DC
+P 5950 7050
+F 0 "R19" V 5743 7050 50  0000 C CNN
+F 1 "R" V 5834 7050 50  0000 C CNN
+F 2 "" V 5880 7050 50  0001 C CNN
+F 3 "~" H 5950 7050 50  0001 C CNN
+	1    5950 7050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R20
+U 1 1 5D351857
+P 5950 7500
+F 0 "R20" V 5743 7500 50  0000 C CNN
+F 1 "R" V 5834 7500 50  0000 C CNN
+F 2 "" V 5880 7500 50  0001 C CNN
+F 3 "~" H 5950 7500 50  0001 C CNN
+	1    5950 7500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 7050 2550 7100
+$Comp
+L power:VCC #PWR0101
+U 1 1 5D370539
+P 2550 6050
+F 0 "#PWR0101" H 2550 5900 50  0001 C CNN
+F 1 "VCC" H 2567 6223 50  0000 C CNN
+F 2 "" H 2550 6050 50  0001 C CNN
+F 3 "" H 2550 6050 50  0001 C CNN
+	1    2550 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 4050 4700 4200
+Wire Wire Line
+	4550 3600 5500 3600
+$Comp
+L Connector:AudioJack2_Ground J3
+U 1 1 5D3E213E
+P 6500 5150
+F 0 "J3" H 6267 5129 50  0000 R CNN
+F 1 "clk 1" H 6267 5220 50  0000 R CNN
+F 2 "" H 6500 5150 50  0001 C CNN
+F 3 "~" H 6500 5150 50  0001 C CNN
+	1    6500 5150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:AudioJack2_Ground J9
+U 1 1 5D3E2FC3
+P 6500 5650
+F 0 "J9" H 6267 5629 50  0000 R CNN
+F 1 "clk 2" H 6267 5720 50  0000 R CNN
+F 2 "" H 6500 5650 50  0001 C CNN
+F 3 "~" H 6500 5650 50  0001 C CNN
+	1    6500 5650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:AudioJack2_Ground J10
+U 1 1 5D3E33A5
+P 6500 6150
+F 0 "J10" H 6267 6129 50  0000 R CNN
+F 1 "clk 3" H 6267 6220 50  0000 R CNN
+F 2 "" H 6500 6150 50  0001 C CNN
+F 3 "~" H 6500 6150 50  0001 C CNN
+	1    6500 6150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:AudioJack2_Ground J11
+U 1 1 5D3E3429
+P 6500 6600
+F 0 "J11" H 6267 6579 50  0000 R CNN
+F 1 "clk 4" H 6267 6670 50  0000 R CNN
+F 2 "" H 6500 6600 50  0001 C CNN
+F 3 "~" H 6500 6600 50  0001 C CNN
+	1    6500 6600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:AudioJack2_Ground J12
+U 1 1 5D3E34AF
+P 6500 7050
+F 0 "J12" H 6267 7029 50  0000 R CNN
+F 1 "clk 5" H 6267 7120 50  0000 R CNN
+F 2 "" H 6500 7050 50  0001 C CNN
+F 3 "~" H 6500 7050 50  0001 C CNN
+	1    6500 7050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:AudioJack2_Ground J13
+U 1 1 5D3E381F
+P 6500 7500
+F 0 "J13" H 6267 7479 50  0000 R CNN
+F 1 "clk 6" H 6267 7570 50  0000 R CNN
+F 2 "" H 6500 7500 50  0001 C CNN
+F 3 "~" H 6500 7500 50  0001 C CNN
+	1    6500 7500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6100 5150 6300 5150
+Wire Wire Line
+	6100 5650 6300 5650
+Wire Wire Line
+	6100 6150 6300 6150
+Wire Wire Line
+	6100 6600 6300 6600
+$Comp
+L power:GND #PWR026
+U 1 1 5D3F7731
+P 6300 7150
+F 0 "#PWR026" H 6300 6900 50  0001 C CNN
+F 1 "GND" H 6305 6977 50  0000 C CNN
+F 2 "" H 6300 7150 50  0001 C CNN
+F 3 "" H 6300 7150 50  0001 C CNN
+	1    6300 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR025
+U 1 1 5D3F77B0
+P 6300 6700
+F 0 "#PWR025" H 6300 6450 50  0001 C CNN
+F 1 "GND" H 6305 6527 50  0000 C CNN
+F 2 "" H 6300 6700 50  0001 C CNN
+F 3 "" H 6300 6700 50  0001 C CNN
+	1    6300 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR024
+U 1 1 5D3F782F
+P 6300 6250
+F 0 "#PWR024" H 6300 6000 50  0001 C CNN
+F 1 "GND" H 6305 6077 50  0000 C CNN
+F 2 "" H 6300 6250 50  0001 C CNN
+F 3 "" H 6300 6250 50  0001 C CNN
+	1    6300 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR023
+U 1 1 5D3F78AE
+P 6300 5750
+F 0 "#PWR023" H 6300 5500 50  0001 C CNN
+F 1 "GND" H 6305 5577 50  0000 C CNN
+F 2 "" H 6300 5750 50  0001 C CNN
+F 3 "" H 6300 5750 50  0001 C CNN
+	1    6300 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR022
+U 1 1 5D3F8C30
+P 6300 5250
+F 0 "#PWR022" H 6300 5000 50  0001 C CNN
+F 1 "GND" H 6305 5077 50  0000 C CNN
+F 2 "" H 6300 5250 50  0001 C CNN
+F 3 "" H 6300 5250 50  0001 C CNN
+	1    6300 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR021
+U 1 1 5D3F8FAB
+P 6200 7550
+F 0 "#PWR021" H 6200 7300 50  0001 C CNN
+F 1 "GND" H 6205 7377 50  0000 C CNN
+F 2 "" H 6200 7550 50  0001 C CNN
+F 3 "" H 6200 7550 50  0001 C CNN
+	1    6200 7550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 7050 6300 7050
+Wire Wire Line
+	6300 7500 6100 7500
+Wire Wire Line
+	6200 7550 6300 7550
+Wire Wire Line
+	6300 7550 6300 7600
+Wire Wire Line
+	4550 3200 5200 3200
+Wire Wire Line
+	5200 3200 5200 5150
+Wire Wire Line
+	5200 5650 5150 5650
+Wire Wire Line
+	5150 5650 5150 3000
+Wire Wire Line
+	5150 3000 4550 3000
+Wire Wire Line
+	4550 3100 5100 3100
+Wire Wire Line
+	5100 3100 5100 6150
+Wire Wire Line
+	5100 6150 5200 6150
+Wire Wire Line
+	4550 3500 5050 3500
+Wire Wire Line
+	5050 3500 5050 6600
+Wire Wire Line
+	5050 6600 5200 6600
+Wire Wire Line
+	4550 3400 5000 3400
+Wire Wire Line
+	5000 3400 5000 7050
+Wire Wire Line
+	5000 7050 5200 7050
+Wire Wire Line
+	5200 7500 4950 7500
+Wire Wire Line
+	4950 7500 4950 3300
+Wire Wire Line
+	4950 3300 4550 3300
 $EndSCHEMATC
